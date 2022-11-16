@@ -1,0 +1,66 @@
+[
+  {
+    "Name": "iPhone 12",
+    "os": "iOS",
+    "brand": "Apple",
+    "ram": "4",
+    "stockage": "128",
+    "prix": "110000",
+    "stock": "13",
+    "magasin": "1"
+  },
+  {
+    "Name": "Samsung S9",
+    "os": "Android",
+    "brand": "Samsung",
+    "ram": "4",
+    "stockage": "64",
+    "prix": "51000",
+    "stock": "14",
+    "magasin": "1"
+  },
+  {
+    "Name": "Samsung S21 Ultra",
+    "os": "Android",
+    "brand": "Samsung",
+    "ram": "12",
+    "stockage": "512",
+    "prix": "175000",
+    "stock": "5",
+    "magasin": "1"
+  },
+  {
+    "Name": "chargeur",
+    "stock": "55",
+    "prix": "3500",
+    "magasin": "1"
+  },
+  {
+    "Name": "cache",
+    "stock": "51",
+    "prix": "1200",
+    "magasin": "1"
+  },
+  {
+    "Name": "ecouteurs",
+    "normal": {
+      "prix": "2500",
+      "stock": "42"
+    },
+    "magasin": "1",
+    "sans fil": {
+      "prix": "5000",
+      "stock": "23"
+    }
+  },
+  {
+    "Name": "iPhone 13",
+    "os": "iOS",
+    "brand": "Apple",
+    "ram": "4",
+    "stockage": "256",
+    "prix": "145000",
+    "stock": "4",
+    "magasin": "1"
+  }
+]

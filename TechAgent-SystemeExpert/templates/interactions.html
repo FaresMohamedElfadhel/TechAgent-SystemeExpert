@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/interactions.css') }}"
+    />
+    <title>Interactions</title>
+  </head>
+  <body>
+    <main>
+      {% for interactions in combined_interactions %}
+      <div class="inters">
+        {% for interaction in interactions %}
+        <p class="inter">{{interaction}}</p>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>

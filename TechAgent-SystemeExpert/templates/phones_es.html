@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/figurine.css') }}"
+    />
+    <!-- <link rel="stylesheet" href="../static/css/vehiculs_style.css" /> -->
+
+    <title>Système Expert Smartphones</title>
+  </head>
+  <div class="all">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('partie_1') }}">
+            <div class="example1">
+              <div class="p1_png"></div>
+            </div>
+
+          </a>
+          </li>
+          <li><a href="{{ url_for('partie_2') }}">
+            <div class="example1">
+              <div class="p2_png"></div>
+            </div>
+          </a></li>
+        </ul>
+      </nav>
+    </header>
+  <body>
+    <main class="grid">
+      <div class="form" action="http://localhost:5000/Rechercher">
+        <div class="card">
+          <form method="POST">
+            <div class="form-controle">
+              <label for="brand">Marque</label><br />
+              <select class="select" name="brand" id="brand">
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Poco">Poco</option>
+                <option value="Redmi">Redmi</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-controle">
+              <label for="ram">Ram</label><br />
+              <select class="select" name="ram" id="ram">
+                <option value="4">4 GB</option>
+                <option value="6">6 GB</option>
+                <option value="8">8 GB</option>
+                <option value="12">12 GB</option>
+                <option value="16">16 GB</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-controle">
+              <label for="stockage">Stockage</label><br />
+              <select class="select" name="stockage" id="stockage">
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+              </select>
+            </div>
+            <br />
+            <label for="price">Prix</label><br />
+            <p id="prix"></p>
+            <input
+              type="range"
+              min="25000"
+              max="200000"
+              value="50000"
+              name="price"
+              id="price"
+            />
+            <input
+              type="submit"
+              name="Rechercher"
+              value="Rechercher"
+              class="btn"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="result">
+        <h1>{{result}}</h1>
+        <a class="regles" href="{{ url_for('regles_page') }}" target="_blank">
+          Voir toutes les regles utilisé
+        </a>
+      </div>
+    </main>
+    <script>
+      var slider = document.getElementById("price");
+      var prix = document.getElementById("prix");
+      prix.innerHTML = slider.value + " DA";
+
+      slider.oninput = function () {
+        prix.innerHTML = this.value + " DA";
+      };
+    </script>
+  </body>
+</div>
+</html>

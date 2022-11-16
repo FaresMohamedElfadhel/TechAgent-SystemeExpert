@@ -1,0 +1,76 @@
+[
+  {
+    "Name": "Samsung S9",
+    "os": "Android",
+    "brand": "Samsung",
+    "ram": "4",
+    "stockage": "64",
+    "prix": "51000",
+    "stock": "13",
+    "magasin": "2"
+  },
+  {
+    "Name": "Samsung S21 Ultra",
+    "os": "Android",
+    "brand": "Samsung",
+    "ram": "12",
+    "stockage": "512",
+    "prix": "175000",
+    "stock": "17",
+    "magasin": "2"
+  },
+  {
+    "Name": "Huawei P30 Pro",
+    "os": "Android",
+    "brand": "Huawei",
+    "ram": "8",
+    "stockage": "256",
+    "prix": "73000",
+    "stock": "20",
+    "magasin": "2"
+  },
+  {
+    "Name": "Huawei P40 Pro",
+    "os": "Android",
+    "brand": "Huawei",
+    "ram": "8",
+    "stockage": "512",
+    "prix": "180000",
+    "stock": "6",
+    "magasin": "2"
+  },
+  {
+    "Name": "Oppo Reno5 Pro",
+    "os": "Android",
+    "brand": "Oppo",
+    "ram": "8",
+    "stockage": "128",
+    "prix": "102000",
+    "stock": "7",
+    "magasin": "2"
+  },
+  {
+    "Name": "cache",
+    "stock": "59",
+    "prix": "1500",
+    "magasin": "2"
+  },
+  {
+    "Name": "chargeur",
+    "stock": "63",
+    "prix": "3300",
+    "magasin": "2"
+  },
+  {
+    "Name": "ecouteurs",
+    "normal": {
+      "prix": "1500",
+      "stock": "52"
+    },
+    "magasin": "2",
+    "sans fil": {
+      "prix": "4500",
+      "stock": "39"
+    }
+  }
+]

@@ -1,0 +1,131 @@
+@Rule(Fact(Personnage='Humanoide'))
+   def alliance(self):
+        self.univers = 'alliance'
+        self.declare(Fact(univers=self.univers))
+        self.rules.append("univers = alliance")
+        print('Pour l Alliance')
+
+    @Rule(NOT(Fact(Personnage='Humanoide')))
+    def horde(self):
+        self.univers = 'Horde'
+        self.declare(Fact(univers=self.univers))
+        self.rules.append("univers = Horde")
+        print('Pour la Horde')
+
+    @Rule(Fact(univers='alliance'), Fact(Personnage='Humanoide'),
+          Fact(modèle='chibi'),
+          Fact(monde='jeu'), Fact(prix=P(lambda prix: prix >= 5000) & P(lambda prix: prix <= 10000)))
+    def Valarjar(self):
+        self.figurine = 'Valarjar'
+        self.resultat = 'Valarjar'
+        self.rules.append(
+            "Personnage = Humanoide AND modèle=chibi AND monde=jeu AND (prix>=5000 AND prix <=10000)")
+        print('Valajar est passé par la')
+
+    @Rule(Fact(univers='alliance'), Fact(Personnage='Humanoide'), Fact(modèle=chibi),
+          Fact(monde='jeu'),
+          Fact(prix=P(lambda prix: prix >= 6000) & P(lambda prix: prix <= 10000)))
+    def Drust(self):
+        self.figurine = 'Drust'
+        self.resultat = 'Drust'
+        self.rules.append(
+            "Personnage = Humanoide AND modèle=chibi AND monde=jeu AND (prix>=6000 AND prix <=10000)")
+        print('Drust est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Ogre'), Fact(modèle='chibi'),
+          Fact(monde='jeu'),
+          Fact(prix=P(lambda prix: prix >= 9500) & P(lambda prix: prix <= 15000)))
+    def Gordok(self):
+        self.figurine = 'Gordok'
+        self.resultat = 'Gordok'
+        self.rules.append(
+            "Personnage = Ogre AND modèle=chibi AND monde=jeu AND (prix>=9500 AND prix <=15000)")
+        print('Gordok est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Ogre'),
+          Fact(modèle='normal'),
+          Fact(monde='anime'),
+          Fact(prix=P(lambda prix: prix >= 30000) & P(lambda prix: prix <= 55000)))
+    def Grol(self):
+        self.figurine = 'Grol'
+        self.resultat = 'Grol'
+        self.rules.append(
+            "Personnage = Ogre AND modèle=normal AND monde=anime AND (prix>=30000 AND prix <=55000)")
+        print('Grol est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Gnome'),
+          Fact(modèle='normal'),
+          Fact(monde='anime'),
+          Fact(prix=P(lambda prix: prix >= 36000) & P(lambda prix: prix <= 60000)))
+    def Gobelin(self):
+        self.figurine = 'Gobelin'
+        self.resultat = 'Gobelin'
+        self.rules.append(
+            "Personnage = Gnome AND modèle=normal AND monde=anime AND (prix>=36000 AND prix <=60000)")
+        print('Gobelin est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Gnome'),
+          Fact(modèle=normal),
+          Fact(monde=anime),
+          Fact(prix=P(lambda prix: prix >= 40000) & P(lambda prix: prix <= 65000)))
+    def Wilfred(self):
+        self.figurine = 'Wilfred'
+        self.resultat = 'Wilfred'
+        self.rules.append(
+            "Personnage = Gnome AND modèle=normal AND monde=anime AND (prix>=40000 AND prix <=65000)")
+        print('Wilfred est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Elfe'),
+          Fact(modèle=normal),
+          Fact(monde=jeu),
+          Fact(prix=P(lambda prix: prix >= 50000) & P(lambda prix: prix <= 70000)))
+    def Sylvanas(self):
+        self.figurine = 'Sylvanas'
+        self.resultat = 'Sylvanas'
+        self.rules.append(
+            "Personnage = Elfe AND modèle=normal AND monde=jeu AND (prix>=40000 AND prix <=70000)")
+        print('Sylvanas est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Elfe'),
+          Fact(modèle='Large'),
+          Fact(monde='film'),
+          Fact(prix=P(lambda prix: prix >= 75000) & P(lambda prix: prix <= 100000)))
+    def Kaelthas(self):
+        self.figurine = 'Kaelthas'
+        self.resultat = 'Kaelthas'
+        self.rules.append(
+            "Personnage = Elfe AND modèle=large AND monde=film AND (prix>=75000 AND prix <=100000)")
+        print('Kaelthas est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Troll'),
+          Fact(modèle='Large'),
+          Fact(monde=film),
+          Fact(prix=P(lambda prix: prix >= 72000) & P(lambda prix: prix <= 100000)))
+    def Zuljin(self):
+        self.figurine = 'Zuljin'
+        self.resultat = 'Zuljin'
+        self.rules.append(
+            "Personnage = Troll AND modèle=large AND monde=film AND (prix>=72000 AND prix <=100000)")
+        print('Zuljin est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Troll'),
+          Fact(modèle='Large'),
+          Fact(monde='film'),
+          Fact(prix=P(lambda prix: prix >= 80000) & P(lambda prix: prix <= 100000)))
+    def Kazrajin(self):
+        self.figurine = 'Kazrajin'
+        self.resultat = 'Kazrajin'
+        self.rules.append(
+            "Personnage = Troll AND (modèle>=6 AND modèle<=8) AND (monde>=64 AND monde<=128) AND (prix>=80000 AND prix <=100000)")
+        print('Kazrajin est passé par la')
+
+    @Rule(Fact(univers='horde'), Fact(Personnage='Troll'),
+          Fact(modèle='Large'),
+          Fact(monde='film'),
+          Fact(prix=P(lambda prix: prix >= 80000) & P(lambda prix: prix <= 100000)))
+    def Rastakhan(self):
+        self.figurine = 'Rastakhan'
+        self.resultat = 'Rastakhan'
+        self.rules.append(
+            "Personnage = Troll AND modèle=Large AND monde=film AND (prix>=80000 AND prix <=10000)")
+        print('Rastakhan est passé par la')

@@ -1,0 +1,83 @@
+[
+  {
+    "Name": "Oppo Reno5 Pro",
+    "os": "Android",
+    "brand": "Oppo",
+    "ram": "8",
+    "stockage": "128",
+    "prix": "109000",
+    "stock": "3",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "Poco X3 Pro",
+    "os": "Android",
+    "brand": "Poco",
+    "ram": "8",
+    "stockage": "128",
+    "prix": "39000",
+    "stock": "12",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "Poco F3",
+    "os": "Android",
+    "brand": "Poco",
+    "ram": "8",
+    "stockage": "256",
+    "prix": "43000",
+    "stock": "8",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "Redmi Note 10 Pro",
+    "os": "Android",
+    "brand": "Redmi",
+    "ram": "6",
+    "stockage": "64",
+    "prix": "36000",
+    "stock": "4",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "Xiaomi 12 Pro",
+    "os": "Android",
+    "brand": "Xiaomi",
+    "ram": "12",
+    "stockage": "256",
+    "prix": "138000",
+    "stock": "2",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "ecouteurs",
+    "normal": {
+      "prix": "1700",
+      "stock": "32"
+    },
+    "sans fil": {
+      "prix": "6000",
+      "stock": "37"
+    },
+    "magasin": "3"
+  },
+
+  {
+    "Name": "cache",
+    "stock": "28",
+    "prix": "1000",
+    "magasin": "3"
+  },
+
+  {
+    "Name": "chargeur",
+    "stock": "15",
+    "prix": "3000",
+    "magasin": "3"
+  }
+]

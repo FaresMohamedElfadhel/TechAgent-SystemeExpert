@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/style.css') }}"
+    />
+    <title>Projet tech-agents</title>
+  </head>
+  <body>
+    <div class="all">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('partie_1') }}">
+            <div class="example1">
+              <div class="p1_png"></div>
+            </div>
+
+          </a>
+          </li>
+          <li><a href="{{ url_for('partie_2') }}">
+            <div class="example1">
+              <div class="p2_png"></div>
+            </div>
+          </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      
+      <div class="links">
+        <a href="{{ url_for('vehicul') }}">
+          <p>Système Expert des Voitures</p>
+            <div class="bg_vehicul"></div>
+            
+          
+        </a>
+        <a href="{{ url_for('phone') }}">
+          <p>Système Expert des Figurines</p>
+            <div class="bg_phone"></div>
+        </a>
+      </div>
+    </main>
+  </div>
+  </body>
+</html>

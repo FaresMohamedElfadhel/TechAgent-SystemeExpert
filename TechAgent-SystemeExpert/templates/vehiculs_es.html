@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/vehiculs_style.css') }}"
+    />
+
+    <title>Système Expert Voitures</title>
+  </head>
+  <div class="all">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('partie_1') }}">
+            <div class="example1">
+              <div class="p1_png"></div>
+            </div>
+
+          </a>
+          </li>
+          <li><a href="{{ url_for('partie_2') }}">
+            <div class="example1">
+              <div class="p2_png"></div>
+            </div>
+          </a></li>
+        </ul>
+      </nav>
+    </header>
+  <body>
+    <main class="grid">
+      <div class="form" action="http://localhost:5000/Rechercher">
+        <div class="card">
+          <form method="POST">
+            <div>
+              <input type="checkbox" id="Motor" name="Motor" />
+              <label for="Motor">Moteur</label>
+            </div>
+            <br />
+            <div class="form-controle">
+              <label for="nb_roues"> Nombre des roues</label><br />
+              <select class="select" name="nb_roues" id="nb_roues">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-controle">
+              <label for="nb_portes"> Nombre des portes</label><br />
+              <select class="select" name="nb_portes" id="nb_portes">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <br />
+            <div class="form-controle">
+              <label for="taille">Taille</label><br />
+              <select class="select" name="taille" id="taille">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <br />
+            <input
+              type="submit"
+              name="Rechercher"
+              value="Rechercher"
+              class="btn"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="result">
+        <img id="f"
+        width="300px"
+        height="300px" style="margin-bottom: 0;">
+        <h1>{{result}}</h1>
+        <a class="regles" href="{{ url_for('regles_page') }}" target="_blank">
+          Voir toutes les regles utilisé
+        </a>
+      </div>
+    </main>
+  </div>
+  <script>
+    window.addEventListener('load', () => {
+    document.getElementById("f").src = `../static/images/{{result}}.png`;
+    });
+  </script>
+  </body>
+  
+</html>

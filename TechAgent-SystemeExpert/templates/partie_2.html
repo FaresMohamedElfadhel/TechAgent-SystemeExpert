@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/partie2.css') }}"
+    />
+    <title>Magasin Figurine</title>
+  </head>
+  <body>
+    <div class="all">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('partie_1') }}">
+            <div class="example1">
+              <div class="p1_png"></div>
+            </div>
+
+          </a>
+          </li>
+          <li><a href="{{ url_for('partie_2') }}">
+            <div class="example1">
+              <div class="p2_png"></div>
+            </div>
+          </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="card">
+        <form method="POST" action="http://localhost:5000/resultat_d'achat">
+          <p class="title">Spécifications du Figurine</p>
+          <p class="sub_title">
+            Choisissez les spécifications du Figurine que vous souhaitez
+            acheter.
+          </p>
+          <div class="spesifications">
+            <div class="form_element">
+              <select name="brand" id="brand">
+                <option value="def">Marque</option>
+                <option value="Apple">Apple</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Poco">Poco</option>
+                <option value="Redmi">Redmi</option>
+              </select>
+            </div>
+            <div class="form_element">
+              <select name="ram" id="ram">
+                <option value="def">Ram</option>
+                <option value="4">4 GB</option>
+                <option value="6">6 GB</option>
+                <option value="8">8 GB</option>
+                <option value="12">12 GB</option>
+                <option value="16">16 GB</option>
+              </select>
+            </div>
+            <div class="form_element">
+              <select name="stockage" id="stockage">
+                <option value="def">Stockage</option>
+                <option value="64">64 GB</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+              </select>
+            </div>
+            <div class="form_element">
+              <p id="prix"></p>
+              <input
+                type="range"
+                min="25000"
+                max="200000"
+                value="50000"
+                name="price"
+                id="price"
+              />
+            </div>
+          </div>
+          <p class="title">Options</p>
+          <p class="sub_title">
+            Vous pouvez également choisir des options avec votre Figurine
+          </p>
+          <div class="accessoires">
+            <div>
+              <input type="checkbox" id="chargeur" name="chargeur" />
+              <label for="chargeur">Chargeur</label>
+            </div>
+            <div>
+              <input type="checkbox" id="cache" name="cache" />
+              <label for="cache">Cache</label>
+            </div>
+            <div class="kit_div">
+              <div>
+                <input type="checkbox" id="ecouteurs" name="ecouteurs" />
+                <label for="ecouteurs">Ecouteurs</label>
+              </div>
+              <div class="kit_type" id="kit_id">
+                <input
+                  type="radio"
+                  id="normal"
+                  name="kit"
+                  value="normal"
+                  checked
+                />
+                <label for="normal">Normal</label><br />
+                <input
+                  type="radio"
+                  id="sans_file"
+                  name="kit"
+                  value="sans fil"
+                />
+                <label for="sans_file">Sans Fil</label>
+              </div>
+            </div>
+          </div>
+          <div class="last">
+            <input
+              type="submit"
+              name="Rechercher"
+              value="Rechercher"
+              class="btn"
+            />
+            <div class="error">
+              <h1>{{erreur}}</h1>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script>
+      var slider = document.getElementById("price");
+      var prix = document.getElementById("prix");
+      prix.innerHTML = "Prix: " + slider.value + " DA";
+
+      slider.oninput = function () {
+        prix.innerHTML = "Prix: " + this.value + " DA";
+      };
+
+      const checkbox = document.querySelector("#ecouteurs");
+      const kit_type = document.querySelector("#kit_id");
+
+      checkbox.addEventListener("change", function (e) {
+        if (checkbox.checked) {
+          kit_type.style.display = "initial";
+        } else {
+          kit_type.style.display = "none";
+        }
+      });
+    </script>
+    </div>
+  </body>
+</html>

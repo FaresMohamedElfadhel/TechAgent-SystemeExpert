@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/order_result.css') }}"
+    />
+    <title>Résultats du Commande</title>
+  </head>
+  <body>
+    <div class="all">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('partie_1') }}">
+              <div class="example1">
+                <div class="p1_png"></div>
+              </div>
+  
+            </a>
+            </li>
+            <li><a href="{{ url_for('partie_2') }}">
+              <div class="example1">
+                <div class="p2_png"></div>
+              </div>
+            </a></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+      <div class="res">
+        {% for result in total_result %}
+        <div class="order_res">
+          <p class="vendeur">
+            Vendeur: <strong>Magasin {{result["magasin"]}}</strong>
+          </p>
+          <div class="products_total">
+            <div class="products_list">
+              <div class="phone">
+                <p class="title">Figurine</p>
+                <div class="product_prix">
+                  <p class="specs">
+                    {{result["phone"]["Name"]}}, Ram
+                    {{result["phone"]["ram"]}}GB, Stockage
+                    {{result["phone"]["stockage"]}}GB
+                  </p>
+                  <p class="prix_prod">{{result["phone"]["prix"]}} DA</p>
+                </div>
+              </div>
+              <div class="accessories">
+                <p class="title">Accessoires</p>
+                {% if result["accessoires"]|length == 0 %}
+                <div class="product_prix">
+                  <p class="specs">Pas d'accessoires</p>
+                  <p class="prix_prod">0 DA</p>
+                </div>
+                {% else %} {% for accessoire in result["accessoires"] %}
+                <div class="product_prix">
+                  <p class="specs">{{accessoire["Name"]}}</p>
+                  <p class="prix_prod">{{accessoire["prix"]}} DA</p>
+                </div>
+                {% endfor %} {% endif %}
+              </div>
+            </div>
+            <div class="prix_total">
+              <div class="prix_element">
+                <p class="prix_title">Prix Total</p>
+                <p class="prix">{{result["prix"]["total"]}} DA</p>
+              </div>
+              <div class="prix_element">
+                <p class="prix_title">Remise</p>
+                <p class="prix">{{result["prix"]["remise"]}}%</p>
+              </div>
+              <div class="prix_element">
+                <p class="prix_title">Prix Apres Remise</p>
+                <p class="prix">{{result["prix"]["prix_remise"]}} DA</p>
+              </div>
+            </div>
+          </div>
+          {% if result["magasin"] == "1" %}
+          <a class="valider" href="{{ url_for('valider_order_1') }}"
+            >Valider Achat du Magasin 1</a
+          >
+          {% elif result["magasin"] == "2" %}
+          <a class="valider" href="{{ url_for('valider_order_2') }}"
+            >Valider Achat du Magasin 2</a
+          >
+          {% else %}
+          <a class="valider" href="{{ url_for('valider_order_3') }}"
+            >Valider Achat du Magasin 3</a
+          >
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <a
+        class="interactions"
+        href="{{ url_for('interactions_page') }}"
+        target="_blank"
+      >
+        Voir toutes les interactions des agents
+      </a>
+    </main>
+  </div>
+  </body>
+</html>

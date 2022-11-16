@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='../static/css/regles.css') }}"
+    />
+    <title>Regles</title>
+  </head>
+  <body>
+    <main>
+      <div class="regles">
+        {% if regles|length > 0 %}
+        <ul>
+          {% for regle in regles %}
+          <li>
+            <p class="regle">{{regle}}</p>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no_regles">Il n'y a pas de règles</p>
+        {% endif %}
+      </div>
+    </main>
+  </body>
+</html>
